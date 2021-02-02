@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ch.firstgamestart.mapper.PlayerInfoMapper">
+    <select id="getAll" resultType="cn.ch.firstgamestart.entity.PlayerInfo">
+        SELECT pi.id,pi.username,pi.level,gpp.ad,gpp.armor,gpp.hp,gpp.crit
+        FROM player_info pi
+        JOIN game_player_property gpp ON pi.level=gpp.level
+        WHERE pi.is_deleted = 1 AND gpp.is_deleted = 1
+    </select>
+</mapper>
