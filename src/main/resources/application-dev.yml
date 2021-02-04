@@ -5,7 +5,7 @@ spring:
     password: root
     username: root
 server:
-  port: 8080
+  port: 5555
 #mybatis-plus配置以及代码生成器is_deleted字段策略配置
 mybatis-plus:
   type-aliases-package: cn.ch.firstgamestart.entity

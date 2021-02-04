@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -54,20 +56,25 @@ public class GameMonsterProperty implements Serializable {
 
     @ApiModelProperty(value = "创建时间")
     @TableField(fill = FieldFill.INSERT)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Date createDate;
 
     @ApiModelProperty(value = "创建人")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String createUser;
 
     @ApiModelProperty(value = "修改时间")
     @TableField(fill = FieldFill.UPDATE)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Date modifyDate;
 
     @ApiModelProperty(value = "修改人")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String modifyUser;
 
     @ApiModelProperty(value = "是否删除 - 1:未删除 0:删除")
     @TableLogic
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Integer isDeleted;
 
 

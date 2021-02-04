@@ -34,7 +34,9 @@ public class GameMonsterPropertyController {
     @GetMapping("/getall")
     @ApiOperation("得到所有怪属性")
     public List<GameMonsterProperty> getAll() {
-        return gameMonsterPropertyService.list();
+        List<GameMonsterProperty> list = gameMonsterPropertyService.list();
+        System.out.println(1);
+        return list;
     }
     
     //TODO: 2021/2/1 各个类的增删改加上 ，且返回的List全部改成Page  @陈浩
